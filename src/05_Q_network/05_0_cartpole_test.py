@@ -23,6 +23,7 @@ while current_episode < 10:
 
     print(next_state, reward, done)
 
+    state = next_state
     reward_total += reward
 
     if done:

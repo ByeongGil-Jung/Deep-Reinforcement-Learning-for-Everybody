@@ -112,6 +112,7 @@ with tf.Session() as sess:
 
         next_state, reward, done, info = env.step(action)
 
+        state = next_state
         reward_total += reward
 
         if done:
@@ -125,56 +126,56 @@ plt.show()
 
 """
 Training started ...
-0 th episode finished with steps : 19
-100 th episode finished with steps : 9
-200 th episode finished with steps : 9
-300 th episode finished with steps : 11
-400 th episode finished with steps : 10
-500 th episode finished with steps : 31
+0 th episode finished with steps : 22
+100 th episode finished with steps : 16
+200 th episode finished with steps : 15
+300 th episode finished with steps : 14
+400 th episode finished with steps : 24
+500 th episode finished with steps : 17
 600 th episode finished with steps : 12
-700 th episode finished with steps : 10
-800 th episode finished with steps : 15
-900 th episode finished with steps : 25
-1000 th episode finished with steps : 40
-1100 th episode finished with steps : 30
+700 th episode finished with steps : 9
+800 th episode finished with steps : 12
+900 th episode finished with steps : 11
+1000 th episode finished with steps : 10
+1100 th episode finished with steps : 9
 1200 th episode finished with steps : 17
-1300 th episode finished with steps : 46
-1400 th episode finished with steps : 9
-1500 th episode finished with steps : 11
-1600 th episode finished with steps : 15
-1700 th episode finished with steps : 16
-1800 th episode finished with steps : 11
-1900 th episode finished with steps : 23
-2000 th episode finished with steps : 13
-2100 th episode finished with steps : 27
-2200 th episode finished with steps : 38
-2300 th episode finished with steps : 85
-2400 th episode finished with steps : 27
-2500 th episode finished with steps : 26
-2600 th episode finished with steps : 125
-2700 th episode finished with steps : 29
-2800 th episode finished with steps : 21
-2900 th episode finished with steps : 13
-3000 th episode finished with steps : 14
-3100 th episode finished with steps : 23
-3200 th episode finished with steps : 24
-3300 th episode finished with steps : 63
-3400 th episode finished with steps : 28
-3500 th episode finished with steps : 25
-3600 th episode finished with steps : 18
-3700 th episode finished with steps : 17
-3800 th episode finished with steps : 38
-3900 th episode finished with steps : 44
-4000 th episode finished with steps : 38
-4100 th episode finished with steps : 57
-4200 th episode finished with steps : 21
-4300 th episode finished with steps : 17
-4400 th episode finished with steps : 14
-4500 th episode finished with steps : 12
-4600 th episode finished with steps : 10
-4700 th episode finished with steps : 25
-4800 th episode finished with steps : 26
-4900 th episode finished with steps : 24
+1300 th episode finished with steps : 40
+1400 th episode finished with steps : 14
+1500 th episode finished with steps : 24
+1600 th episode finished with steps : 28
+1700 th episode finished with steps : 23
+1800 th episode finished with steps : 30
+1900 th episode finished with steps : 16
+2000 th episode finished with steps : 31
+2100 th episode finished with steps : 42
+2200 th episode finished with steps : 23
+2300 th episode finished with steps : 21
+2400 th episode finished with steps : 38
+2500 th episode finished with steps : 14
+2600 th episode finished with steps : 25
+2700 th episode finished with steps : 32
+2800 th episode finished with steps : 15
+2900 th episode finished with steps : 41
+3000 th episode finished with steps : 58
+3100 th episode finished with steps : 43
+3200 th episode finished with steps : 27
+3300 th episode finished with steps : 31
+3400 th episode finished with steps : 14
+3500 th episode finished with steps : 33
+3600 th episode finished with steps : 25
+3700 th episode finished with steps : 23
+3800 th episode finished with steps : 90
+3900 th episode finished with steps : 33
+4000 th episode finished with steps : 24
+4100 th episode finished with steps : 15
+4200 th episode finished with steps : 22
+4300 th episode finished with steps : 38
+4400 th episode finished with steps : 11
+4500 th episode finished with steps : 19
+4600 th episode finished with steps : 27
+4700 th episode finished with steps : 15
+4800 th episode finished with steps : 15
+4900 th episode finished with steps : 16
 
-Testing finished with total reward : 9.0
+Testing finished with total reward : 45.0
 """
