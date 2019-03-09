@@ -58,7 +58,7 @@ with tf.Session() as sess:
         while True:
             action = None
             step_count += 1
-            state_reshaped = np.reshape(state, [1, input_size])
+            state_reshaped = np.reshape(state, [-1, input_size])
 
             q_state = sess.run(fetches=logits1, feed_dict={X: state_reshaped})
 
@@ -74,7 +74,7 @@ with tf.Session() as sess:
             if done:
                 q_state[0, action] = -100  # give a big penalty
             else:
-                next_state_reshaped = np.reshape(next_state, [1, input_size])
+                next_state_reshaped = np.reshape(next_state, [-1, input_size])
                 q_next_state = sess.run(fetches=logits1, feed_dict={X: next_state_reshaped})
 
                 q_state[0, action] = reward + discount_rate * np.max(q_next_state)
@@ -105,7 +105,7 @@ with tf.Session() as sess:
 
     while True:
         env.render()
-        state_reshaped = np.reshape(state, [1, input_size])
+        state_reshaped = np.reshape(state, [-1, input_size])
 
         pred_state = sess.run(fetches=logits1, feed_dict={X: state_reshaped})
         action = np.argmax(pred_state)
@@ -126,56 +126,56 @@ plt.show()
 
 """
 Training started ...
-0 th episode finished with steps : 22
-100 th episode finished with steps : 16
-200 th episode finished with steps : 15
-300 th episode finished with steps : 14
-400 th episode finished with steps : 24
-500 th episode finished with steps : 17
-600 th episode finished with steps : 12
+0 th episode finished with steps : 40
+100 th episode finished with steps : 10
+200 th episode finished with steps : 11
+300 th episode finished with steps : 8
+400 th episode finished with steps : 14
+500 th episode finished with steps : 9
+600 th episode finished with steps : 26
 700 th episode finished with steps : 9
-800 th episode finished with steps : 12
-900 th episode finished with steps : 11
-1000 th episode finished with steps : 10
-1100 th episode finished with steps : 9
-1200 th episode finished with steps : 17
-1300 th episode finished with steps : 40
+800 th episode finished with steps : 9
+900 th episode finished with steps : 16
+1000 th episode finished with steps : 25
+1100 th episode finished with steps : 22
+1200 th episode finished with steps : 20
+1300 th episode finished with steps : 16
 1400 th episode finished with steps : 14
-1500 th episode finished with steps : 24
-1600 th episode finished with steps : 28
-1700 th episode finished with steps : 23
-1800 th episode finished with steps : 30
-1900 th episode finished with steps : 16
-2000 th episode finished with steps : 31
-2100 th episode finished with steps : 42
-2200 th episode finished with steps : 23
-2300 th episode finished with steps : 21
-2400 th episode finished with steps : 38
-2500 th episode finished with steps : 14
-2600 th episode finished with steps : 25
-2700 th episode finished with steps : 32
-2800 th episode finished with steps : 15
-2900 th episode finished with steps : 41
-3000 th episode finished with steps : 58
-3100 th episode finished with steps : 43
-3200 th episode finished with steps : 27
-3300 th episode finished with steps : 31
-3400 th episode finished with steps : 14
-3500 th episode finished with steps : 33
-3600 th episode finished with steps : 25
-3700 th episode finished with steps : 23
-3800 th episode finished with steps : 90
-3900 th episode finished with steps : 33
-4000 th episode finished with steps : 24
+1500 th episode finished with steps : 38
+1600 th episode finished with steps : 25
+1700 th episode finished with steps : 28
+1800 th episode finished with steps : 28
+1900 th episode finished with steps : 13
+2000 th episode finished with steps : 22
+2100 th episode finished with steps : 59
+2200 th episode finished with steps : 30
+2300 th episode finished with steps : 27
+2400 th episode finished with steps : 32
+2500 th episode finished with steps : 20
+2600 th episode finished with steps : 17
+2700 th episode finished with steps : 21
+2800 th episode finished with steps : 14
+2900 th episode finished with steps : 36
+3000 th episode finished with steps : 42
+3100 th episode finished with steps : 30
+3200 th episode finished with steps : 41
+3300 th episode finished with steps : 27
+3400 th episode finished with steps : 13
+3500 th episode finished with steps : 20
+3600 th episode finished with steps : 18
+3700 th episode finished with steps : 46
+3800 th episode finished with steps : 11
+3900 th episode finished with steps : 12
+4000 th episode finished with steps : 38
 4100 th episode finished with steps : 15
-4200 th episode finished with steps : 22
-4300 th episode finished with steps : 38
-4400 th episode finished with steps : 11
-4500 th episode finished with steps : 19
-4600 th episode finished with steps : 27
-4700 th episode finished with steps : 15
-4800 th episode finished with steps : 15
+4200 th episode finished with steps : 10
+4300 th episode finished with steps : 13
+4400 th episode finished with steps : 34
+4500 th episode finished with steps : 17
+4600 th episode finished with steps : 31
+4700 th episode finished with steps : 27
+4800 th episode finished with steps : 44
 4900 th episode finished with steps : 16
 
-Testing finished with total reward : 45.0
+Testing finished with total reward : 25.0
 """
